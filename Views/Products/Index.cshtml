@@ -1,0 +1,48 @@
+﻿@using ComputerShop.Models
+@model IEnumerable<Product>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+
+    </title>
+</head>
+<body>
+
+
+    <h2>Продукты</h2>
+    <p><a href="Products/Create">Добавить продукт</a></p>
+    <form method="get">
+        <p>
+            <input type="radio" name="search" value="FullSearch" />Полный поиск
+        </p>
+        <p>
+            <input type="radio" name="search" value="PartialSearch" />Поиск по слову
+        </p>
+        <label>Наименование:</label>
+        <input name="Name" /><br />
+        <input type="submit" value="Поиск"/>
+    </form>
+    <table>
+        <tr><th>Имя</th><th>Цена</th></tr>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>
+                    <a href="Products/Edit?id=@item.Id">Изменить</a>
+                </td>
+                <td>
+                    <form action="Products/Delete?id=@item.Id" method="post">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
