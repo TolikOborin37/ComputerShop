@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tolik\\source\\repos\\ComputerShop\\ComputerShop.csproj": {}
+    "C:\\projects\\ComputerShop\\ComputerShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tolik\\source\\repos\\ComputerShop\\ComputerShop.csproj": {
+    "C:\\projects\\ComputerShop\\ComputerShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tolik\\source\\repos\\ComputerShop\\ComputerShop.csproj",
+        "projectUniqueName": "C:\\projects\\ComputerShop\\ComputerShop.csproj",
         "projectName": "ComputerShop",
-        "projectPath": "C:\\Users\\tolik\\source\\repos\\ComputerShop\\ComputerShop.csproj",
-        "packagesPath": "C:\\Users\\tolik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tolik\\source\\repos\\ComputerShop\\obj\\",
+        "projectPath": "C:\\projects\\ComputerShop\\ComputerShop.csproj",
+        "packagesPath": "C:\\Users\\lvobo\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\ComputerShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tolik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lvobo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -46,7 +52,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -69,7 +75,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -81,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }
