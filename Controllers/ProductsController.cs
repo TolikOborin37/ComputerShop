@@ -9,9 +9,9 @@ namespace ComputerShop.Controllers
     /// </summary>
     public class ProductsController : Controller
     {
-        readonly ProductsContext db;
+        readonly ShopContext db;
 
-        public ProductsController(ProductsContext context)
+        public ProductsController(ShopContext context)
         {
             db = context;
         }
@@ -27,13 +27,13 @@ namespace ComputerShop.Controllers
         {
             if (!string.IsNullOrEmpty(name) && search == "PartialSearch")
             {
-                return View(db.Products.Where(p => EF.Functions.Like(p.Name, $"%{name}%")).ToList());
+                return View(db.Product.Where(p => EF.Functions.Like(p.Name, $"%{name}%")).ToList());
             }
             else if (!string.IsNullOrEmpty(name) && search == "FullSearch")
             {
-                return View(db.Products.Where(p => p.Name == name).ToList());
+                return View(db.Product.Where(p => p.Name == name).ToList());
             }
-            return View(db.Products.ToList());
+            return View(db.Product.ToList());
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace ComputerShop.Controllers
                 return NotFound();
             }
 
-            db.Products.Add(product);
+            db.Product.Add(product);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -74,13 +74,13 @@ namespace ComputerShop.Controllers
         {
             if (Id != Guid.Empty)
             {
-                Product? product = db.Products.FirstOrDefault(p => p.Id == Id);
+                Product? product = db.Product.FirstOrDefault(p => p.Id == Id);
                 if (product == null)
                 {
                     return NotFound();
                 }
 
-                db.Products.Remove(product);
+                db.Product.Remove(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -100,7 +100,7 @@ namespace ComputerShop.Controllers
         {
             if (Id != Guid.Empty)
             {
-                Product? product = db.Products.FirstOrDefault(p => p.Id == Id);
+                Product? product = db.Product.FirstOrDefault(p => p.Id == Id);
                 if (product != null)
                 {
                     return View(product);
@@ -117,7 +117,7 @@ namespace ComputerShop.Controllers
         [HttpPost]
         public IActionResult Edit(Product product)
         {
-            db.Products.Update(product);
+            db.Product.Update(product);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
